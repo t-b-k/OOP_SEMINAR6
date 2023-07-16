@@ -1,20 +1,19 @@
 package lsp2.model;
 
-public class Order {
-    private final int price;
-    private final int quantity;
+import lsp2.factory.Orderable;
+
+public class Order extends Orderable {
 
     public Order(int quantity, int price) {
-        this.price = price;
-        this.quantity = quantity;
+        super(quantity, price);
     }
 
     public int getAmount() {
-        return quantity * price;
+        return this.quantity * this.price;
     }
 
     @Override
     public String toString() {
-        return String.format("Quantity = %d, Price = %d", quantity, price);
+        return String.format("Regular order: Quantity = %d, Price = %d", this.getQuantity(), this.getPrice());
     }
 }

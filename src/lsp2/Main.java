@@ -1,6 +1,7 @@
 package lsp2;
 
 import lsp2.factory.OrderFactory;
+import lsp2.factory.Orderable;
 import lsp2.model.Order;
 import lsp2.util.OrderCalculator;
 
@@ -11,10 +12,10 @@ public class Main {
         calculator.add(creator.create(3, 2, false));
         calculator.add(creator.create(1, 3, true));
 
-        for (Order order : calculator) {
+        for (Orderable order : calculator) {
             System.out.println(order);
         }
 
-        System.out.printf("Order sum %d", calculator.calcAmount());
+        System.out.printf("Orders sum = %d", calculator.calcAmount());
     }
 }

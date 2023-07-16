@@ -1,12 +1,12 @@
 package lsp1.shape;
 
-public class Rectangle {
+public class Rectangle extends Quadraliteral {
     private int sideA;
     private int sideB;
 
     public Rectangle(int sideA, int sideB) {
-        this.setSideA(sideA);
-        this.setSideB(sideB);
+        this.sideA = sideA;
+        this.sideB = sideB;
     }
 
     public int getSideA() {
@@ -25,7 +25,7 @@ public class Rectangle {
         this.sideB = sideB;
     }
 
-    public int getArea() {
+    public double getArea() {
         return sideA * sideB;
     }
 }

@@ -1,6 +1,8 @@
 package lsp2.model;
 
-public class OrderBonus extends Order{
+import lsp2.factory.Orderable;
+
+public class OrderBonus extends Orderable {
 
     public OrderBonus(int quantity, int price) {
         super(quantity, price);
@@ -9,5 +11,10 @@ public class OrderBonus extends Order{
     @Override
     public int getAmount() {
         return 0;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("Bonus order: Quantity = %d, Price = %d", this.getQuantity(), this.getPrice());
     }
 }
